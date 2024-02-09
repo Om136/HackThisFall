@@ -58,55 +58,86 @@ const addSolution=async(req,res,next)=>{
 }
 
 
-const getQues=async(req,res,next)=>{
-    const allQues=await Doubt.aggregate([
-        {
-            $lookup:{
-                from:'Soln',
-                localField:"_id",
-                foreignField:"content",
-                as:'answer'
-            }
+const getQues = async (req, res, next) => {
+    const allQues = await Doubt.aggregate([
+      {
+        $lookup: {
+          from: 'Soln',
+          localField: '_id',
+          foreignField: 'question',
+          as: 'solutions',
         },
-        {
-            $lookup:{
-                from:'Soln',
-                localField:"_id",
-                foreignField:"owner",
-                as:'answer_owner'
-            }
+      },
+      {
+        $lookup: {
+          from: 'User',
+          localField: 'owner',
+          foreignField: '_id',
+          as: 'owner',
         },
-        {
-            $lookup:{
-                from:'Soln',
-                localField:"_id",
-                foreignField:"upvotes",
-                as:'upvotes'
-            }
+      },
+      {
+        $unwind: '$solutions',
+      },
+      {
+        $lookup: {
+          from: 'Soln',
+          localField: 'solutions.upvotes',
+          foreignField: '_id',
+          as: 'upvotes',
         },
-        {
-            $lookup:{
-                from:'Soln',
-                localField:"_id",
-                foreignField:"downvotes",
-                as:'downvotes'
-            }
+      },
+      {
+        $unwind: {
+          path: '$upvotes',
+          preserveNullAndEmptyArrays: true,
         },
-        {
-            $lookup:{
-                from:'Soln',
-                localField:"_id",
-                foreignField:"publishingDate",
-                as:'publishingDate'
-            }
+      },
+      {
+        $lookup: {
+          from: 'Soln',
+          localField: 'solutions.downvotes',
+          foreignField: '_id',
+          as: 'downvotes',
         },
-        {
-            $project:{
-                
-            }
-        }
-    ])
+      },
+      {
+        $unwind: {
+          path: '$downvotes',
+          preserveNullAndEmptyArrays: true,
+        },
+      },
+      {
+        $addFields: {
+          'solutions.upvotes': '$upvotes',
+          'solutions.downvotes': '$downvotes',
+        },
+      },
+      {
+        $project: {
+          content: 1,
+          solutions: {
+            _id: 1,
+            owner: 1,
+            content: 1,
+            upvotes: 1,
+            downvotes: 1,
+            publishingDate: 1,
+          },
+          owner: {
+            _id: 1,
+            username: 1,
+          },
+          upvotes: 0,
+          downvotes: 0,
+        },
+      },
+    ]);
+  
+    res.status(200).json({
+      status: 200,
+      data: allQues,
+    });
+  };
 
-}
-
-export {addDoubt,addSolution};
+export {addDoubt,addSolution,getQues};
