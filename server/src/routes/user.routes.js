@@ -4,6 +4,8 @@ import express from 'express';
 const router = express.Router();
 import user from "../models/user.model.js";
 
+import {setuser,getuser} from "../auth/authentication.js";
+
 // Define your routes here
 router.get('/', (req, res) => {
   res.send('Hello, this is the main route!');
@@ -55,7 +57,11 @@ const ismatch=bcrypt.compare(password,database.password);
 
    
 if(ismatch){
-    res.render("login");
+    // res.render("home");
+    const token = setuser(database);
+    res.cookie("uid",token);
+    return res.redirect("/");
+
 }
 else{
     res.send("Error Invalid Credentials")

@@ -12,3 +12,4 @@ mongoose
   .catch((err) => console.error("Connection failed:", err));
 
 export default mongoose.connection;
+
