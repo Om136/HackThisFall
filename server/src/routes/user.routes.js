@@ -14,18 +14,17 @@ router.get('/about', (req, res) => {
 });
 
 router.post("/register",async(req,res)=>{
-    
     try{
-const passwords= req.body.password;
-const cpassword= req.body.confirm_password;
+    const passwords= req.body.password;
+    const cpassword= req.body.confirm_password;
 
-if(passwords===cpassword){
- const registername=new user({
-    Username:req.body.username,
-    Email:req.body.email,
-    Password:req.body.password,
-    ConfirmPassword:req.body.confirm_password,
- })
+    if(passwords===cpassword){
+    const registername=new user({
+        Username:req.body.username,
+        Email:req.body.email,
+        Password:req.body.password,
+        ConfirmPassword:req.body.confirm_password,
+    })
 
 //  const tokengenerated= await registername.genratetoken();
 // console.log(tokengenerated);
