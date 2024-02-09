@@ -1,12 +1,18 @@
+import React ,{useState} from 'react';
+import DatePicker from "react-datepicker";
 const SignUpPage = () => {
+  
+
+  const [date, setDate] = useState(new Date());
+
   return (
-    <div className="mt-32 flex items-center justify-center bg-[#F1F1F2]">
-      <div className="max-w-md w-full p-6 bg-[#F1F1F2] border border-[#1995AD]  rounded-md shadow-md">
-        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">
+    <div className="min-h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('your-background-image.jpg')" }}>
+      <div className="max-w-md w-full p-8 bg-white bg-opacity-80 border border-[#1976D2] rounded-md shadow-md">
+        <h2 className="text-4xl font-extrabold text-center text-[#1976D2] mb-6">
           Sign Up
         </h2>
 
-        <form>
+        <form className="space-y-4">
           <div className="mb-4">
             <label
               htmlFor="username"
@@ -18,7 +24,7 @@ const SignUpPage = () => {
               type="text"
               id="username"
               name="username"
-              className="w-full px-3 py-2 border rounded-md"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
           </div>
 
@@ -33,7 +39,7 @@ const SignUpPage = () => {
               type="email"
               id="email"
               name="email"
-              className="w-full px-3 py-2 border rounded-md"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
           </div>
 
@@ -48,7 +54,7 @@ const SignUpPage = () => {
               type="password"
               id="password"
               name="password"
-              className="w-full px-3 py-2 border rounded-md"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
           </div>
 
@@ -63,13 +69,22 @@ const SignUpPage = () => {
               type="password"
               id="confirmPassword"
               name="confirmPassword"
-              className="w-full px-3 py-2 border rounded-md"
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300"
             />
           </div>
 
+          <div className="mb-4">
+         < DatePicker
+          onChange={(date) => setDate(date)}
+          selected={date}
+          dateFormat="dd/MM/yy"
+          id="date"
+        />
+    </div>
+
           <button
             type="submit"
-            className="w-full py-2 px-4 text-center bg-[#1995AD] rounded-md text-white text-sm hover:bg-blue-500 focus:outline-none"
+            className="w-full bg-[#1976D2] text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
           >
             Sign Up
           </button>
@@ -77,5 +92,8 @@ const SignUpPage = () => {
       </div>
     </div>
   );
+  
 };
+
 export default SignUpPage;
+

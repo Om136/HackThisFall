@@ -4,7 +4,7 @@ import {getuser} from "./authentication";
 
 async function restrictloginuser (req,res,next){
 
-const userid= req.cookies.uid;
+const userid= req.cookie.uid;
 
 if(!userid){
     return res.redirect("/login");
