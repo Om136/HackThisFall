@@ -14,10 +14,7 @@
     "axios": "^1.6.7",
     "cors": "^2.8.5",
     "react": "^18.2.0",
-<<<<<<< HEAD
-=======
     "react-datepicker": "^6.1.0",
->>>>>>> 8c998f149eb31f3183013e1597db775678e1f39f
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0"
   },
