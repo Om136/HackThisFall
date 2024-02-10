@@ -1,5 +1,6 @@
 import React ,{useState} from 'react';
 import DatePicker from "react-datepicker";
+import 'react-datepicker/dist/react-datepicker.css';
 const SignUpPage = () => {
   
 
@@ -74,12 +75,20 @@ const SignUpPage = () => {
           </div>
 
           <div className="mb-4">
+          <label
+              htmlFor="email"
+              className="block text-gray-600 text-sm font-medium mb-2"
+            >
+             Date
+            </label>
          < DatePicker
           onChange={(date) => setDate(date)}
           selected={date}
           dateFormat="dd/MM/yy"
           id="date"
-        />
+          className="w-full px-3 py-2 border rounded-md"
+          calendarPlacement="right"
+/>
     </div>
 
           <button
