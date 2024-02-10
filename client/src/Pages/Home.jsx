@@ -1,7 +1,7 @@
 import image1 from "../assets/images/image-1.jpg";
 import Footer from "../components/Footer";
 import bodyImg from '../assets/images/feature-section-2BG.svg'
-
+import Crousels from "../components/Crousels";
 function Home() {
   return (
     <>
@@ -11,7 +11,8 @@ function Home() {
             <img src={bodyImg} alt="" className="w-full h-auto absolute left-0 top-0 object-cover" />
             <div className="flex absolute justify-between">
               <div className=" h-[50%] w-[50%] m-3 rounded-lg">
-                <img src={image1} alt="" className="h-[100%] w-[100%] rounded-lg"/>
+                {/* <img src={image1} alt="" className="h-[100%] w-[100%] rounded-lg"/> */}
+                <Crousels/>
               </div>
               <div className="w-[40%] p-5 flex-col flex justify-center">
                 <div className=" text-slate-200 tracking-wide text-4xl font-bold my-2">Learn.  Ask.. Solve...</div>
@@ -19,7 +20,7 @@ function Home() {
                   A platform to ask your doubts , connect with like-minded people and learn together
                 </div>
                 <div>
-                  <button className=" bg-sky-500 p-3 rounded-lg m-3 tracking-wide font-semibold text-slate-800 font-sans text-lg">SignUp now -></button>
+                  <button className=" bg-sky-500 p-3 rounded-lg m-3 tracking-wide font-semibold text-slate-800 font-sans text-lg">SignUp now </button>
                 </div>
               </div>
             </div>  

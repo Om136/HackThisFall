@@ -4,12 +4,15 @@ import Navbar from "./components/Navbar";
 import LoginPage from "./Pages/Login";
 import SignUpPage from "./Pages/SignUp";
 import Footer from "./components/Footer";
+import Crousels  from "./components/Crousels.jsx";
 
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle.js"  ;
 
 function App() {
   return (
     <div>
     <Navbar />
+  
     <Outlet />
     <Footer></Footer>
     </div>
