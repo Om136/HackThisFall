@@ -4,13 +4,20 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "node src/main.jsx",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.6.7",
+    "cors": "^2.8.5",
     "react": "^18.2.0",
+<<<<<<< HEAD
+=======
+    "react-datepicker": "^6.1.0",
+>>>>>>> 8c998f149eb31f3183013e1597db775678e1f39f
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.0"
   },
