@@ -1,13 +1,14 @@
-import React ,{useState} from 'react';
+import { useState } from "react";
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css';
 const SignUpPage = () => {
-  
-
   const [date, setDate] = useState(new Date());
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('your-background-image.jpg')" }}>
+    <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center"
+      style={{ backgroundImage: "url('your-background-image.jpg')" }}
+    >
       <div className="max-w-md w-full p-8 bg-white bg-opacity-80 border border-[#1976D2] rounded-md shadow-md">
         <h2 className="text-4xl font-extrabold text-center text-[#1976D2] mb-6">
           Sign Up
@@ -101,8 +102,6 @@ const SignUpPage = () => {
       </div>
     </div>
   );
-  
 };
 
 export default SignUpPage;
-
