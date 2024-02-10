@@ -11,8 +11,7 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.js"  ;
 function App() {
   return (
     <div>
-    <Navbar />
-  
+<Navbar />
     <Outlet />
     <Footer></Footer>
     </div>
