@@ -3,7 +3,6 @@ import {Doubt} from '../models/doubt.model.js';
 import { ApiError } from '../utils/ApiError.js';
 
 
-
 const addDoubt=async(req,res,next)=>{
     try{
         const {content,user_id}=req.body;
