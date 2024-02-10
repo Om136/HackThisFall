@@ -12,11 +12,17 @@
   },
   "dependencies": {
     "axios": "^1.6.7",
+    "bootstrap": "^5.3.2",
     "cors": "^2.8.5",
     "react": "^18.2.0",
+<<<<<<< HEAD
+    "react-bootstrap": "^2.10.1",
+=======
+>>>>>>> 902f30005af9ceeab8971480fd06b0d6e506a325
     "react-datepicker": "^6.1.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.0"
+    "react-router-dom": "^6.22.0",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",
