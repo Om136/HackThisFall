@@ -2,9 +2,12 @@ import image1 from "../assets/images/image-1.jpg";
 import Footer from "../components/Footer";
 import bodyImg from '../assets/images/feature-section-2BG.svg'
 import Crousels from "../components/Crousels";
+import Navbar from "../components/Navbar";
 function Home() {
   return (
     <>
+     <Navbar />
+
       <div className="bg-blue-700 min-h-screen">
         <div className="relative bg-blue-700">
           <div className=" bg-blue-700 h-screen w-screen relative flex flex-col justify-center">
