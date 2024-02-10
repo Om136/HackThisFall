@@ -6,12 +6,14 @@ import LoginPage from './Pages/Login.jsx';
 import SignUpPage from './Pages/SignUp.jsx';
 import Home from './Pages/Home.jsx';
 import { Route, Router, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import CommunityPage from './Pages/community_page.jsx';
 const router=createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="" element={<Home />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignUpPage />} /> 
+      <Route path='/community' element={<CommunityPage/>} />
     </Route>
   )
 )
